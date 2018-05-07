@@ -1,8 +1,9 @@
 /target/
-!.mvn/wrapper/maven-wrapper.jar
+# !.mvn/wrapper/maven-wrapper.jar
 mvnw
 mvnw.cmd
 
+.mvnw
 
 
 ### STS ###

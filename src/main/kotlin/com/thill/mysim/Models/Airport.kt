@@ -1,6 +1,9 @@
 package com.thill.mysim.Models
 
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.thill.mysim.Repositories.FlightRepo
 import lombok.NoArgsConstructor
+import org.springframework.beans.factory.annotation.Autowired
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
@@ -19,4 +22,8 @@ class Airport(
         val coordinates: String = ""
         ) {
 
+        @Transient
+        var flight_count: Int = 0
+
 }
+data class AirportDTO(val ident: String = "", val name: String = "", val coordinates: String, val type: String = "")
