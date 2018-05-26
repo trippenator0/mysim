@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface AirportRepo: CrudRepository<Airport, String>{
-     override fun findAll() : List<Airport>
-    @Query("SELECT a FROM Airport a WHERE a.iso_region = ?1")
-     fun findAllByIsoRegion(iso: String) : List<Airport>
+     override fun findAll() :List<Airport>
+     @Query("select a.ident from Airport a")
+     fun findIdents(): List<String>
 }
