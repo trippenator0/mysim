@@ -1,4 +1,7 @@
 FROM maven:3.5-jdk-10-slim AS builder
+COPY src /app/src
+COPY pom.xml /app
+WORKDIR /app
 RUN mvn clean install -DskipTests
 
 FROM openjdk:10-jre-slim
