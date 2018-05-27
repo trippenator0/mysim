@@ -19,6 +19,6 @@ class Airport(
         val lat: Double = 0.0,
         val lng: Double = 0.0,
         @Transient
-        var departing_flights: List<Flight> = ArrayList(),
+        var departing_flights: List<FlightDTO> = ArrayList(),
         @Transient
-        var arriving_flights: List<Flight> = ArrayList()) {}
+        var arriving_flights: List<FlightDTO> = ArrayList()) {}

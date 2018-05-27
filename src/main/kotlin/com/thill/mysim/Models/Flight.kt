@@ -19,12 +19,20 @@ data class Flight (
         val arr_code: String = "",
         val status: FlightStatus = FlightStatus.BOOKED,
         @Convert(converter = FlightPositionJSONConverter::class)
-        val current_position: FlightPosition = FlightPosition(),
+        var current_position: FlightPosition = FlightPosition(),
         @Convert(converter = FlightPositionListJSONConverter::class)
-        val previous_positions: List<FlightPosition> = emptyList(),
+        var previous_positions: MutableList<FlightPosition> = arrayListOf(),
         val pilot: String = "") {
 
 }
+data class FlightDTO (
+    val dep_code: String = "",
+    val arr_code: String = "",
+    val current_position: FlightPosition = FlightPosition()
+) {
+}
+
+
 enum class FlightStatus {
     BOOKED, STARTED, CANCELLED, ENROUTE, LANDED
 }
