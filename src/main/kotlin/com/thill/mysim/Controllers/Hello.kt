@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.stream.Collectors
 
 @RestController
-@CrossOrigin(origins = ["http://localhost:4200", "https://fsim.thill.tech"])
+@CrossOrigin(origins = ["http://localhost:4200", "https://fsim.thill.tech", "https://fakeflights.thill.tech"])
 class Hello() {
     @Autowired
     lateinit var airportService: AirportService
